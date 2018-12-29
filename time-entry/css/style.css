@@ -1,0 +1,123 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 15px;
+}
+.tbl-content table {
+    table-layout:fixed;
+    width:100%;
+    padding-bottom: 0px;
+    background: #fff;
+}
+.tbl-header table {
+    padding-bottom: 0px;
+    table-layout:fixed;
+    width:100%;
+}
+
+.table-content tr th:nth-child(1), .table-content tr td:nth-child(1) {
+    width: 20% !important;
+}
+
+.table-content tr th,.table-content tr td{
+    width: 10%;
+    text-align: left;
+    border: 1px solid #f0eaea;
+    border-bottom: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.table-content table{
+    border-collapse: collapse;
+}
+
+.table-content tr:last-child td{
+    border: 1px solid #f0eaea;
+}
+.section-time-entry {
+    width: 80%;
+    margin: auto;
+}
+
+.table-content tr th {
+    background: #6091bc;
+    color: #fff;
+    font-size: 15px;
+}
+
+.table-content tr td input.input-data {
+    max-width: 80px;
+    border-width: 0 0 1px;
+    font-size: 14px;
+}
+.table-content tr td input.input-data:focus{
+    outline: none;
+    border-bottom: 1px solid #6091bc;
+}
+
+.total_time {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.col-half{
+    width: 50%;
+    float: left;
+}
+.text-right{
+    text-align: right;
+}
+
+.top-header .col-half {
+    padding: 20px 0;
+}
+
+.top-header h3 {
+    margin: 0;
+}
+.btn-section .btn-common {
+    min-width: 100px;
+    padding: 8px 20px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    cursor: pointer;
+}
+.btn-section .btn-common:hover {
+    background-color: #6091bc;
+    color: #fff;
+}
+
+.input-addon {
+    position: relative;
+}
+
+.input-addon .hrs-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+}
+
+.table-content.tbl-content.view_only tbody td input {
+    border-color: transparent !important;
+    pointer-events: none;
+}
+
+.view_only tbody td .input-addon {
+    display: none;
+}
+
+.total_billable_data {
+    font-weight: 500;
+    text-align: left;
+    color: #000;
+}
+
+.daily_billable_time {
+    font-weight: 500;
+    font-size: 14px;
+}

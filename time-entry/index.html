@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Entry</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/time-dropdown.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="section-time-entry">
+    <div class="top-header">
+        <div class="col-half">
+            <h3>Time Entry</h3>
+        </div>
+        <div class="col-half btn-section text-right">
+            <button type="button" class="btn-common btn_edit">Edit</button>
+            <button type="button" class="btn-common btn_cancel">Cancel</button>
+        </div>
+    </div>
+    <div class="table-content tbl-header">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-content tbl-content view_only">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td>Time In</td>
+                <td><input type="text" class="input-data in_time" data-day="day_1"></td>
+                <td><input type="text" class="input-data in_time" data-day="day_2"></td>
+                <td><input type="text" class="input-data in_time" data-day="day_3"></td>
+                <td><input type="text" class="input-data in_time" data-day="day_4"></td>
+                <td><input type="text" class="input-data in_time" data-day="day_5"></td>
+                <td><input type="text" class="input-data in_time" data-day="day_6"></td>
+                <td><input type="text" class="input-data in_time" data-day="day_7"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Time Out</td>
+                <td><input type="text" class="input-data out_time" data-day="day_1"></td>
+                <td><input type="text" class="input-data out_time" data-day="day_2"></td>
+                <td><input type="text" class="input-data out_time" data-day="day_3"></td>
+                <td><input type="text" class="input-data out_time" data-day="day_4"></td>
+                <td><input type="text" class="input-data out_time" data-day="day_5"></td>
+                <td><input type="text" class="input-data out_time" data-day="day_6"></td>
+                <td><input type="text" class="input-data out_time" data-day="day_7"></td>
+                <td></td>
+            </tr>
+            <tr class="non_billable_row">
+                <td>Non Billable</td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data non_billable_time" type="text" value="0:00" data-day="day_1" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data non_billable_time" type="text" value="0:00" data-day="day_2" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data non_billable_time" type="text" value="0:00" data-day="day_3" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data non_billable_time" type="text" value="0:00" data-day="day_4" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data non_billable_time" type="text" value="0:00" data-day="day_5" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data non_billable_time" type="text" value="0:00" data-day="day_6" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data non_billable_time" type="text" value="0:00" data-day="day_7" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td><div class="total_billable_data" id="total_non_billable_time">0:00hrs</div></td>
+            </tr>
+            <tr class="sick_time_row">
+                <td>Break/Sick Time</td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data sick_time" type="text" value="0:00" data-day="day_1" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data sick_time" type="text" value="0:00" data-day="day_2" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data sick_time" type="text" value="0:00" data-day="day_3" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data sick_time" type="text" value="0:00" data-day="day_4" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data sick_time" type="text" value="0:00" data-day="day_5" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data sick_time" type="text" value="0:00" data-day="day_6" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="hrs-locate" data-minutes="0:00">0:00hrs</div>
+                    <div class="input-addon">
+                        <input maxlength="5" class="input-data sick_time" type="text" value="0:00" data-day="day_7" autocomplete="off">
+                        <div class="hrs-title">hrs</div>
+                    </div>
+                </td>
+                <td><div class="total_billable_data" id="total_sick_time">0:00hrs</div></td>
+            </tr>
+            <tr class="daily_billable_time_row">
+                <td>Billable Time</td>
+                <td><div data-day="day_1" class="daily_billable_time" data-minutes="0:00">0:00 hrs</div></td>
+                <td><div data-day="day_2" class="daily_billable_time" data-minutes="0:00">0:00 hrs</div></td>
+                <td><div data-day="day_3" class="daily_billable_time" data-minutes="0:00">0:00 hrs</div></td>
+                <td><div data-day="day_4" class="daily_billable_time" data-minutes="0:00">0:00 hrs</div></td>
+                <td><div data-day="day_5" class="daily_billable_time" data-minutes="0:00">0:00 hrs</div></td>
+                <td><div data-day="day_6" class="daily_billable_time" data-minutes="0:00">0:00 hrs</div></td>
+                <td><div data-day="day_7" class="daily_billable_time" data-minutes="0:00">0:00 hrs</div></td>
+                <td><div class="total_billable_data" id="total_billable_hours">0:00hrs</div></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="./js/jquery.js"></script>
+<script src="./js/input-mask.js"></script>
+<script src="./js/time-dropdown.js"></script>
+<script>
+    $(function(){
+        function billableTotal(item) {
+            var totalMin = 0;
+            $('.daily_billable_time_row .daily_billable_time').each(function (item) {
+                var item = $(this);
+                var currMin = time_convert($(item).attr('data-minutes'));
+                totalMin = totalMin + Number(currMin);
+            });
+            $('#total_billable_hours').html('');
+            if (isNaN(totalMin))
+                $('#total_billable_hours').html('00:00');
+            else
+                $('#total_billable_hours').html(convertMinsToHrsMins(totalMin));
+
+        }
+        function nonBillableTotal(item){
+            var totalMin = 0;
+            $('.non_billable_row .non_billable_time').each(function(item) {
+                var item = $(this);
+                var currMin = time_convert($(item).val());
+                totalMin = totalMin + Number(currMin);
+            });
+            $('#total_non_billable_time').html('');
+            if(isNaN(totalMin))
+                $('#total_non_billable_time').html('00:00');
+            else
+                $('#total_non_billable_time').html(convertMinsToHrsMins(totalMin));
+        }
+        function sickBillableTotal(item){
+            var totalMin = 0;
+            $('.sick_time_row .sick_time').each(function(item) {
+                var item = $(this);
+                var currMin = time_convert($(item).val());
+                totalMin = totalMin + Number(currMin);
+            });
+            $('#total_sick_time').html('');
+            if(isNaN(totalMin))
+                $('#total_non_billable_time').html('00:00');
+            else
+                $('#total_sick_time').html(convertMinsToHrsMins(totalMin));
+        }
+        function convertMinsToHrsMins(minutes) {
+            var h = Math.floor(minutes / 60);
+            var m = minutes % 60;
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            return h +':' + m + 'hrs';
+        }
+        function timeDifferenceInOut(t1,t2) {
+            var total= (t2-t1) ;
+            return total;
+        }
+        function time_format(d) {
+            d = new Date(d);
+            return d.getHours() + ":" + d.getMinutes();
+        }
+        function valid_time(par1,par2,par3)
+        {
+            var total_result= (par1-par2)-par3 ;
+            return total_result;
+        }
+        function calculateBillableAll(item) {
+            var attrVal = $(item).attr('data-day');
+            var valObj = $('.in_time[data-day='+attrVal+']').val();
+            var currVal = $('.out_time[data-day='+attrVal+']').val();
+            $('.daily_billable_time[data-day='+attrVal+']').html('0:00hrs');
+            $('.daily_billable_time[data-day='+attrVal+']').attr('data-minutes','0:00');
+            $('#save_timesheet').prop('disabled',false);
+            var t1,t2;
+            if(currVal.length > 4 && valObj.length > 4){
+                t1 =    convertTime12to24(valObj);
+                t2 =   convertTime12to24(currVal);
+                if(t1 > t2 || isNaN(t1) || isNaN(t2)){
+                    $(item).addClass('error');
+                    $('.out_time[data-day='+attrVal+']').addClass('error');
+                    $('#save_timesheet').prop('disabled',true);
+                    return;
+                }else{
+                    $(item).removeClass('error');
+                    var diffInOut = timeDifferenceInOut(time_convert(time_format(t1)),time_convert(time_format(t2)));
+                    var diffNonbillable = $('.non_billable_time[data-day='+attrVal+']').val();
+                    var diffSick = $('.sick_time[data-day='+attrVal+']').val();
+                    if(diffNonbillable == ''){
+                        diffNonbillable = '00:00';
+                    }
+
+                    if(diffSick == ''){
+                        diffSick = '00:00';
+                    }
+                    var diffFinal = valid_time(diffInOut,time_convert(diffNonbillable),time_convert(diffSick));
+                    $('.daily_billable_time[data-day='+attrVal+']').html('');
+                    if(diffFinal < 0 || isNaN(diffFinal)){
+                        $(item).addClass('error');
+                        $('.daily_billable_time[data-day='+attrVal+']').html('00:00');
+                    }else{
+                        $('.daily_billable_time[data-day='+attrVal+']').attr('data-minutes',convertOnlyMinuteHours(diffFinal));
+                        $('.daily_billable_time[data-day='+attrVal+']').html(convertMinsToHrsMins(diffFinal));
+                    }
+
+                }
+            }
+        }
+
+
+        $('.btn_edit').on('click',function() {
+            $('.tbl-content').removeClass('view_only');
+            $('.view_only tbody td .input-addon').show();
+            $('.hrs-locate').hide();
+        });
+        function formatNewDateFieldForView(dateStr) {
+            if(dateStr != null)
+            {
+                var monthStr = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                var mDate = new Date(dateStr);
+
+                mDate.setHours(mDate.getHours()-5);
+                mDate.setMinutes(mDate.getMinutes()-30);
+
+                return monthStr[mDate.getMonth()]+" "+mDate.getDate()+" "+mDate.getFullYear();
+            }
+            else
+            {
+                return "";
+            }
+
+        }
+        function convertTime12to24(time) {
+            var  AMPM = " "+time.slice(-2);
+            time = time.slice(0,-2) + AMPM;
+            var today_date = formatNewDateFieldForView(new Date())
+            var timeForm = new Date(today_date +" " +time).getTime();
+            return timeForm;
+        }
+        function time_convert(parems)
+        {
+            var time = parems.split(':');
+            var hour = time[0];
+            var minute = time[1];
+            var converted_hour_to_minute = parseInt(hour)*60;
+            var total_minute = converted_hour_to_minute + parseInt(minute);
+            return total_minute ;
+        }
+
+        function convertOnlyMinuteHours(minutes) {
+            var h = Math.floor(minutes / 60);
+            var m = minutes % 60;
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            return h +':' + m;
+        }
+
+        $('input.in_time,input.out_time').inputmask({
+            mask: "h:s t\\m",
+            showMaskOnHover: false,
+            showMaskOnFocus: false,
+            placeholder: "_",
+            alias: "datetime",
+            hourFormat: "12"
+        });
+        $('.in_time').timepicker({'scrollDefault': '9:15am','step': 15,'disableTextInput':false });
+        $('.out_time').timepicker({'scrollDefault': '5:30pm','step': 15,'disableTextInput':false });
+        $('.non_billable_time').timepicker({ 'timeFormat': 'H:i','step': 15,'showDuration': true,'disableTextInput':false });
+        $('.sick_time').timepicker({ 'timeFormat': 'H:i','step': 15,'maxTime': '8:00am','showDuration': true,'disableTextInput':false});
+        $('.sick_time_row .hrs-title').on('click', function(){
+            $(this).closest('td').find('.sick_time').focus();
+            $(this).closest('td').find('.sick_time').timepicker('show');
+        });
+        $('.non_billable_row .hrs-title').on('click', function(){
+            $(this).closest('td').find('.non_billable_time').focus();
+            $(this).closest('td').find('.non_billable_time').timepicker('show');
+        });
+        $('.daily_billable_time_row .hrs-title').on('click', function(){
+            $(this).closest('td').find('.daily_billable_time').focus();
+        });
+
+        $('.in_time').on('focus',function(){
+            var daySelec = $(this).attr('data-day');
+            var in_current = $('.in_time[data-day='+daySelec+']').val();
+            if(in_current == '')
+                in_current = '9:00am';
+            $(this).timepicker({ 'minTime': in_current,'maxTime':'11:45pm','step': 15,'disableTextInput':false});
+        });
+
+        $('.out_time').on('focus',function(){
+            var daySelec = $(this).attr('data-day');
+            var in_current = $('.in_time[data-day='+daySelec+']').val();
+            if(in_current == '')
+                in_current = '9:00am';
+            $(this).timepicker({ 'minTime': in_current,'maxTime':'11:45pm','step': 15,'disableTextInput':false});
+        });
+
+        $('.non_billable_time').on('focus',function(){
+            var daySelec = $(this).attr('data-day');
+            var daily_time = $('.daily_billable_time[data-day='+daySelec+']').attr('data-minutes');
+            var value = $(this).val();
+            var curr_val = time_convert(value);
+            daily_time = time_convert(daily_time);
+            var finalTime = convertOnlyMinuteHours(curr_val + daily_time);
+            $(this).timepicker({ 'minTime': '00:00','maxTime':finalTime,'timeFormat': 'H:i','step': 15,'disableTextInput':false});
+        });
+
+        $('.sick_time').on('focus',function(){
+            var daySelec = $(this).attr('data-day');
+            var daily_time = $('.daily_billable_time[data-day='+daySelec+']').attr('data-minutes');
+            var value = $(this).val();
+            var curr_val = time_convert(value);
+            daily_time = time_convert(daily_time);
+            var finalTime = convertOnlyMinuteHours(curr_val + daily_time);
+            $(this).timepicker({ 'minTime': '00:00','maxTime':finalTime,'timeFormat': 'H:i','step': 15,'disableTextInput':false});
+        });
+
+        $('.in_time').on('changeTime', function() {
+            var selector = $(this);
+            var daySelec = $(this).attr('data-day');
+            $(this).timepicker({ 'scrollDefault': '9:15am','step': 15,'disableTextInput':false});
+            var in_current = $(this).val();
+            $('.out_time[data-day='+daySelec+']').timepicker({ 'setTime': in_current,'timeFormat': 'H:i','step': 15,'disableTextInput':false})
+            $('.out_time[data-day='+daySelec+']').timepicker('remove');
+            $('.non_billable_time[data-day='+daySelec+']').timepicker('remove');
+            $('.sick_time[data-day='+daySelec+']').timepicker('remove');
+            calculateBillableAll(selector);
+            billableTotal(selector);
+        });
+
+        $('.out_time').on('changeTime', function() {
+            var selector = $(this);
+            var daySelec = $(this).attr('data-day');
+            var in_current = $('.in_time[data-day='+daySelec+']').val();
+            $(this).timepicker({ 'setTime': in_current,'timeFormat': 'H:i','step': 15,'disableTextInput':false});
+            $(this).timepicker('remove');
+            calculateBillableAll(selector);
+            billableTotal(selector);
+        });
+
+        $('.non_billable_time').on('changeTime', function() {
+            var selector = $(this);
+            var currelem = $(selector).val();
+            var daySelec = $(this).attr('data-day');
+            $(this).timepicker({ 'setTime': currelem,'timeFormat': 'H:i','step': 15,'disableTextInput':false});
+            $(this).timepicker('remove');
+            calculateBillableAll(selector);
+            nonBillableTotal(selector);
+            billableTotal(selector);
+        });
+
+        $('.sick_time').on('changeTime', function() {
+            var selector = $(this);
+            var currelem = $(selector).val();
+            var daySelec = $(this).attr('data-day');
+            $(this).timepicker({ 'setTime': currelem,'timeFormat': 'H:i','step': 15,'disableTextInput':false});
+            $(this).timepicker('remove');
+            var lenCount = $('tbody.project_body_entry tr').length;
+            calculateBillableAll(selector);
+            sickBillableTotal(selector)
+            billableTotal(selector);
+        });
+    });
+</script>
+</body>
+</html>
